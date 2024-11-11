@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação de Nomes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #218838;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #166b28;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .botao {
+            background-color: #218838;
+            height: 1.5rem;
+            border-radius: 3rem;
+            border: 5px solid transparent;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            padding: 0;
+        }
+
+        .botao:hover {
+            background-color: #166b28;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Ordenar Nomes em Ordem Alfabética Inversa - Davi e João Victor</h1>
+        <button onclick="ordenarNomes()">Ordenar Nomes</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function ordenarNomes() {
+            // Lista de nomes
+            const nomes = [
+                "ANTHONY RODRIGUES SILVA",
+                "BEATRIS CECILIA DE SOUSA",
+                "CÁSSIO FRANÇA OLIVEIRA",
+                "CAUAN BASTOS DE OLIVEIRA",
+                "DANILLO GASPAR AGUIAR DA SILVA",
+                "DAVI CAMPOS NAPOLI",
+                "EDUARDO DANI SILVA",
+                "ELIZABETE SILVA OLIVEIRA",
+                "EVERTON NASCIMENTO MANCIO",
+                "GABRIEL ALMEIDA NOGUEIRA",
+                "GABRIEL DA SILVA CRISPIM",
+                "GIOVANNA MOMESSO CERRI DO PRADO",
+                "GIULIA DE ALMEIDA OLIVEIRA",
+                "GUILHERME FIGUEIRA PIRES",
+                "HILLARY ISABELLE MOTA DE LIMA",
+                "JOÃO PEDRO LIMA MUNIZ",
+                "JOÃO VICTOR MUNIZ DIAS",
+                "JOSE EDUARDO CARVALHO NOBREGA",
+                "JOSE PAULO DA GAMA SOBRINHO",
+                "JULIANE MARTINS GONÇALVES JIRARDI",
+                "LUIS GUILHERME GOMES DOS SANTOS",
+                "LUIZ FERNANDO DA SILVA VIEIRA",
+                "MARIA CLARA DA SILVA JACINTO",
+                "MARIA PRISCILA SOUZA BUENO",
+                "MATHEUS PACIFICO GONÇALVES",
+                "MATHEUS SERRA NASCIMENTO",
+                "MAURICIO LUIZ SOARES DE CAMARGO",
+                "MURYLLO SULLYVAN JESUS GOUVEIA ALVES",
+                "NICOLAS DOMINGUES BRUGNEROTTO",
+                "OTAVIO EMANOEL DE LIMA PORTO",
+                "PEDRO AUGUSTO PEREIRA DA SILVA GOMES",
+                "PEDRO MAURICIO PALHARES DE CAMPOS",
+                "RAFAEL D'ANGELO GRADILONE PONTES",
+                "RAUL GALDINO PEREIRA MARTUCCI",
+                "RAUL GONÇALVES MAZZONE",
+                "SAMUEL SANTANA BUENO DE ALMEIDA",
+                "WENVEL KAIQUE CAMPOS GOMES"
+            ];
+
+            // Ordena os nomes em ordem alfabética inversa
+            nomes.sort((a, b) => b.localeCompare(a));
+
+            // Exibe os nomes ordenados
+            document.getElementById('result').innerText = `Nomes ordenados em ordem alfabética inversa:\n \n${nomes.join('\n')}`;
+        }
+    </script>
+    <br>
+    <button onclick="window.location.href='index.html'" class="botao">Voltar</button>
+</body>
+
+</html>

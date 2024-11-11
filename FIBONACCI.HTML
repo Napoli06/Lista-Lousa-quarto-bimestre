@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Fibonacci - Davi e João Victor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .botao {
+            background-color: #218838;
+            height: 1.5rem;
+            border-radius: 3rem;
+            border: 5px solid transparent;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            padding: 0;
+        }
+
+        .botao:hover {
+            background-color: #166b28;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Cálculo da Sequência de Fibonacci</h1>
+        <label for="number">Digite um número:</label>
+        <input type="number" id="number" min="0" placeholder="Número não negativo">
+        <button onclick="calcularFibonacci()">Calcular Fibonacci</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calcularFibonacci() {
+            const numero = parseInt(document.getElementById('number').value);
+            let resultado = '';
+
+            if (isNaN(numero) || numero < 0) {
+                resultado = 'Por favor, insira um número válido.';
+            } else {
+                resultado = `Sequência de Fibonacci até ${numero}: `;
+                for (let i = 0; i <= numero; i++) {
+                    resultado += fibonacci(i) + (i < numero ? ', ' : '');
+                }
+            }
+
+            document.getElementById('result').innerText = resultado;
+        }
+
+        function fibonacci(n) {
+            if (n <= 1) return n;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    </script>
+    <br>
+    <button onclick="window.location.href='index.html'" class="botao">Voltar</button>
+</body>
+
+</html>
